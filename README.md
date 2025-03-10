@@ -92,3 +92,25 @@ Logical Operators: Used in conditional statements.
         && (AND) → true && false (false)  
         || (OR) → true || false (true)  
          ! (NOT) → !true (false)
+
+         
+
+# How the Web Works
+       HTTP/HTTPS Protocols: Browsers request web pages from servers using these protocols.
+       DNS Resolution: Domain names are translated into IP addresses for locating servers.
+       Web Servers: Deliver HTML, CSS, JavaScript, and other resources to browsers.
+       Rendering Process: Browsers parse and render HTML, apply styles, and execute JavaScript to display web content.
+       Web Standards: Ensure cross-platform compatibility and interoperability between devices.
+
+# Web Standards Model
+     Collaboration for Web Standards: W3C and IETF work together to create web standards.
+    Importance of Web Standards: Ensure consistent, accessible, and usable web experiences across devices and browsers.
+    Cross-Platform Compatibility: Standards promote interoperability, making sure the web functions similarly on all platforms.
+    Future-Proofing: Standards are crucial for maintaining and evolving the web.
+    
+# How Browsers Load Websites  
+     DNS Resolution: Browser translates domain names to IP addresses.
+     Connecting to the Server: A connection is established with the server hosting the website.
+     Sending HTTP Requests: The browser requests resources (HTML, CSS, JS) from the server.
+     Processing Responses: The server responds with the requested resources.
+     Rendering the Page: The browser renders HTML, applies CSS, and executes JavaScript to display the page.
