@@ -228,4 +228,32 @@ Example:
 console.log(5 == "5");  // true (type coercion)
 console.log(5 === "5"); // false (strict comparison)
 
+# Control Flow & Error Handling
+
+Code executes from top to bottom unless altered by control structures.
+
+## Conditional Statements
+if-else: Executes code based on conditions.
+switch: Used for multiple conditions.
+for: Repeats a block of code a fixed number of times.
+while: Repeats as long as a condition is true.
+do-while: Ensures the loop runs at least once.
+
+
+ ## Error Handling
+try-catch: Catches and handles errors to prevent crashes.
+finally: Executes code regardless of an error.
+Use throw to create custom errors.
+
+
+Use if-else and switch for decision-making.
+
+Use loops (for, while, do-while) for iteration.
+
+Implement try-catch-finally for robust error handling.
+
+Throw errors when necessary for better debugging.
+
+
+
 
