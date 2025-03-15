@@ -171,3 +171,61 @@ JavaScript should work alongside HTML and CSS to create a seamless user experien
 
 JavaScript can introduce security risks (e.g., Cross-Site Scripting - XSS).
 Proper validation and security measures are necessary when handling user input.
+
+#JavaScript Grammar and Types
+
+1. case-sensitive (myVar ≠ myvar).
+
+2. Single-line: // comment
+
+Multi-line: /* comment */
+
+3. Variables ( var, let, or const.)
+ must start with a letter, _, or $.
+
+4. Data Types
+
+Primitive:
+
+String ('text', "text")
+
+Number (42, 3.14)
+
+Boolean (true, false)
+
+Null (null – empty value)
+
+Undefined (uninitialized variable)
+
+Symbol (unique value, ES6+)
+
+BigInt (large integers, ES11+)
+
+Objects:
+Collections of key-value pairs ( Array, Function, Date).
+
+5. Type Conversions
+
+console.log("5" + 5); // "55" (string)
+console.log("5" - 1); // 4 (number)
+
+6. Truthy & Falsy Values
+
+Falsy: false, 0, "", null, undefined, NaN
+
+Truthy: Anything not falsy (e.g., 42, {}, []).
+
+7. Operators
+
+Arithmetic: +, -, *, /, %, **
+
+Comparison: == (loose), === (strict)
+
+Logical: &&, ||, !
+
+Example:
+
+console.log(5 == "5");  // true (type coercion)
+console.log(5 === "5"); // false (strict comparison)
+
+
