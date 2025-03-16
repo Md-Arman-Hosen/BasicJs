@@ -365,3 +365,68 @@ function multiplyBy(factor) {
 }
 
 
+
+# Expressions in JavaScript
+Expressions produce values and can be categorized into:
+Arithmetic Expressions (5 + 3, x * y)
+String Expressions ("Hello " + "World")
+Logical Expressions (a && b, x || y)
+Assignment Expressions (x = 10)
+
+
+#Types of Operators
+
+##Arithmetic Operators
+Perform mathematical operations.
+
+let sum = 10 + 5; // Addition
+let product = 10 * 2; // Multiplication
+let remainder = 10 % 3; // Modulus
+
+##Comparison Operators
+Compare values and return a Boolean.
+
+console.log(5 == "5");  // true (loose equality)
+console.log(5 === "5"); // false (strict equality)
+console.log(10 > 5);    // true
+
+##Logical Operators
+Used to combine Boolean expressions.
+
+console.log(true && false); // false
+console.log(true || false); // true
+console.log(!true);         // false
+
+##Assignment Operators
+Used to assign values.
+
+let x = 10;
+x += 5;  // Equivalent to x = x + 5;
+
+##Bitwise Operators
+Perform bit-level operations.
+
+console.log(5 & 1); // Bitwise AND
+console.log(5 | 1); // Bitwise OR
+
+## Ternary Operator (? :) 
+A shorthand for if-else conditions.
+
+let age = 20;
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // Adult
+
+## Nullish Coalescing Operator (??)
+Returns the right-hand operand if the left-hand operand is null or undefined.
+
+let name = null;
+let defaultName = name ?? "Guest";
+console.log(defaultName); // Guest
+
+## Optional Chaining Operator (?.)
+Prevents errors when accessing properties of null or undefined.
+
+let user = {};
+console.log(user?.profile?.name); // undefined (instead of error)
+
+
