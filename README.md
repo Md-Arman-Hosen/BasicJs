@@ -280,4 +280,88 @@ JavaScript provides multiple loops for iteration:
 - **`break`** – Exits the loop completely.
 - **`continue`** – Skips to the next iteration.
 
+# JavaScript Functions
+
+1. Function Declaration
+
+Defined using the function keyword.
+
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+2. Function Expressions
+
+Functions assigned to variables (anonymous or named).
+
+const greet = function(name) {
+    return `Hello, ${name}!`;
+};
+
+3. Arrow Functions
+
+Shorter syntax, does not bind this.
+
+const greet = (name) => `Hello, ${name}!`;
+
+4. Parameters & Arguments
+
+Functions accept parameters and return values.
+
+function sum(a, b) {
+    return a + b;
+}
+
+5. Default Parameters
+
+Set default values if arguments are missing.
+
+function greet(name = "Guest") {
+    return `Hello, ${name}!`;
+}
+
+6. Rest Parameters
+
+Handles multiple arguments as an array.
+
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+7. Callback Functions
+
+A function passed as an argument to another function.
+
+function process(callback) {
+    callback();
+}
+
+8. Anonymous & Immediately Invoked Function Expressions (IIFE)
+
+Executed immediately after definition.
+
+(function() {
+    console.log("IIFE executed");
+})();
+
+9. Function Scope & Closures
+
+Functions create their own scope, and closures retain access to their parent scope.
+
+function outer() {
+    let count = 0;
+    return function inner() {
+        count++;
+        return count;
+    };
+}
+
+10. Higher-Order Functions
+
+Functions that take other functions as parameters or return functions.
+
+function multiplyBy(factor) {
+    return (num) => num * factor;
+}
+
 
