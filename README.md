@@ -255,5 +255,29 @@ Implement try-catch-finally for robust error handling.
 Throw errors when necessary for better debugging.
 
 
+# Loops and Iteration
+
+## 1. Loop Types 
+JavaScript provides multiple loops for iteration:
+- **for** – Loops with a counter.
+- **while** – Loops while a condition is true.
+- **do...while** – Runs at least once, then checks the condition.
+- **for...in** – Iterates over object properties.
+- **for...of** – Iterates over iterable objects like arrays.
+
+## 2. `for` Loop :Used when the number of iterations is known.
+
+## 3. `while` Loop :Used when the number of iterations is unknown but based on a condition.
+
+## 4. `do...while` Loop: Runs at least once before checking the condition.
+
+## 5. `for...in` Loop :Iterates over properties of an object.
+
+## 6. `for...of` Loop: Iterates over iterable objects like arrays.
+
+
+## 7. Breaking and Continuing Loops
+- **`break`** – Exits the loop completely.
+- **`continue`** – Skips to the next iteration.
 
 
