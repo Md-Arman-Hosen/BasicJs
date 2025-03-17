@@ -152,27 +152,27 @@ Version control systems help track changes and make updates easier to manage.
 JavaScript is essential for adding interactivity and dynamic behavior to web pages.
 It enables features like form validation, animations, and real-time updates.
 
-#Client-Side vs. Server-Side Scripting
+# Client-Side vs. Server-Side Scripting
 
 JavaScript primarily runs on the client side (in the browser), reducing server load.
 Server-side scripting (e.g., with Node.js) allows JavaScript to handle backend processes.
 
-#How Browsers Interpret JavaScript
+# How Browsers Interpret JavaScript
 
 Browsers download and execute JavaScript files.
 The Document Object Model (DOM) allows scripts to modify page content dynamically.
 
-#Progressive Enhancement & Unobtrusive JavaScript
+# Progressive Enhancement & Unobtrusive JavaScript
 
 Best practices suggest writing scripts that enhance, but do not break, core functionality.
 JavaScript should work alongside HTML and CSS to create a seamless user experience.
 
-#Security Considerations
+# Security Considerations
 
 JavaScript can introduce security risks (e.g., Cross-Site Scripting - XSS).
 Proper validation and security measures are necessary when handling user input.
 
-#JavaScript Grammar and Types
+# JavaScript Grammar and Types
 
 1. case-sensitive (myVar ≠ myvar).
 
@@ -374,36 +374,36 @@ Logical Expressions (a && b, x || y)
 Assignment Expressions (x = 10)
 
 
-#Types of Operators
+# Types of Operators
 
-##Arithmetic Operators
+## Arithmetic Operators
 Perform mathematical operations.
 
 let sum = 10 + 5; // Addition
 let product = 10 * 2; // Multiplication
 let remainder = 10 % 3; // Modulus
 
-##Comparison Operators
+## Comparison Operators
 Compare values and return a Boolean.
 
 console.log(5 == "5");  // true (loose equality)
 console.log(5 === "5"); // false (strict equality)
 console.log(10 > 5);    // true
 
-##Logical Operators
+## Logical Operators
 Used to combine Boolean expressions.
 
 console.log(true && false); // false
 console.log(true || false); // true
 console.log(!true);         // false
 
-##Assignment Operators
+## Assignment Operators
 Used to assign values.
 
 let x = 10;
 x += 5;  // Equivalent to x = x + 5;
 
-##Bitwise Operators
+## Bitwise Operators
 Perform bit-level operations.
 
 console.log(5 & 1); // Bitwise AND
@@ -429,4 +429,71 @@ Prevents errors when accessing properties of null or undefined.
 let user = {};
 console.log(user?.profile?.name); // undefined (instead of error)
 
+
+#  Numbers and Strings
+
+
+JavaScript has a single `Number` type (floating-point, 64-bit IEEE 754 format). 
+
+### Basic Number Operations
+```let sum = 10 + 5, product = 10 * 2, quotient = 10 / 2, remainder = 10 % 3;```
+
+### Special Numeric Values
+- `Infinity` and `-Infinity`
+- `NaN` (Not a Number)
+```
+console.log(1 / 0); // Infinity
+console.log("hello" * 2); // NaN
+```
+
+### Parsing Numbers
+Convert strings to numbers.
+```
+console.log(parseInt("42")); // 42
+console.log(parseFloat("3.14")); // 3.14
+console.log(Number("99")); // 99
+```
+
+### Number Methods
+```
+let num = 5.6789;
+console.log(num.toFixed(2)); // "5.68"
+console.log(num.toPrecision(3)); // "5.68"
+console.log(Number.isNaN(NaN)); // true
+```
+
+## 2.JavaScript Strings
+Strings represent text and are enclosed in quotes (`'`, `"`, or backticks `` ` `` for template literals).
+
+### String Concatenation & Template Literals
+```
+let name = "John";
+console.log("Hello, " + name + "!"); // Concatenation
+console.log(`Hello, ${name}!`); // Template literals
+```
+
+### String Methods
+```
+let str = "JavaScript";
+console.log(str.length); // 10
+console.log(str.toUpperCase()); // "JAVASCRIPT"
+console.log(str.toLowerCase()); // "javascript"
+console.log(str.includes("Script")); // true
+console.log(str.indexOf("S")); // 4
+console.log(str.slice(0, 4)); // "Java"
+```
+
+### Escaping Characters
+Use `\` to escape special characters.
+```
+console.log("He said, \"Hello!\""); // "He said, "Hello!""
+```
+
+### Converting Between Numbers and Strings
+```
+let num = 100;
+console.log(num.toString()); // "100"
+console.log(String(123)); // "123"
+console.log(Number("456")); // 456
+```
 
