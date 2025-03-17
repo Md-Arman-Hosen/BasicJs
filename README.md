@@ -497,3 +497,63 @@ console.log(String(123)); // "123"
 console.log(Number("456")); // 456
 ```
 
+
+#  Dates and Times
+
+##Creating Dates in JavaScript
+JavaScript provides the `Date` object to work with dates and times.
+```
+let now = new Date(); // Current date and time
+let specificDate = new Date("2025-03-18"); // Specific date
+let timestamp = new Date(1672531199000); // Using milliseconds since epoch
+```
+
+## Getting Date Components
+Methods to extract date parts:
+```
+let date = new Date();
+console.log(date.getFullYear()); // Year
+console.log(date.getMonth()); // Month (0-based)
+console.log(date.getDate()); // Day of the month
+console.log(date.getDay()); // Day of the week (0 = Sunday)
+console.log(date.getHours()); // Hours (0-23)
+console.log(date.getMinutes()); // Minutes
+console.log(date.getSeconds()); // Seconds
+```
+
+## Setting Date Components
+Modify parts of a date:
+```
+let date = new Date();
+date.setFullYear(2025);
+date.setMonth(11); // December (0-based)
+date.setDate(25); // 25th day
+console.log(date);
+```
+
+## Formatting Dates
+Convert dates to readable strings.
+```
+let date = new Date();
+console.log(date.toDateString()); // "Tue Mar 18 2025"
+console.log(date.toISOString()); // "2025-03-18T00:00:00.000Z"
+console.log(date.toLocaleDateString()); // "3/18/2025" (varies by locale)
+```
+
+## Date Comparisons
+Compare dates using timestamps.
+```
+let date1 = new Date("2025-01-01");
+let date2 = new Date("2025-12-31");
+console.log(date1 < date2); // true
+```
+
+## 6. **Working with Timestamps**
+Get or set the number of milliseconds since January 1, 1970.
+```
+let now = Date.now(); // Current timestamp in milliseconds
+console.log(new Date(now)); // Convert timestamp to date
+```
+
+
+
