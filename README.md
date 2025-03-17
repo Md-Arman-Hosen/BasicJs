@@ -556,4 +556,65 @@ console.log(new Date(now)); // Convert timestamp to date
 ```
 
 
+# Regular Expressions
+
+Regular expressions (RegEx) are patterns used to match character combinations in strings. They are commonly used for searching, replacing, and validating text.
+
+## Creating Regular Expressions
+There are two ways to create a regular expression in JavaScript:
+```javascript
+let regex1 = /pattern/; // Literal syntax
+let regex2 = new RegExp("pattern"); // Constructor function
+```
+
+## Common RegEx Patterns
+- `^` – Matches the start of a string
+- `$` – Matches the end of a string
+- `.` – Matches any character except a newline
+- `*` – Matches zero or more occurrences
+- `+` – Matches one or more occurrences
+- `?` – Matches zero or one occurrence
+- `{n,m}` – Matches between `n` and `m` occurrences
+- `\d` – Matches any digit (`0-9`)
+- `\w` – Matches any word character (letters, digits, underscore)
+- `\s` – Matches any whitespace character
+- `[^]` – Negates a set, matching anything except specified characters
+
+## Regular Expressions
+### Testing a Match
+```
+let regex = /hello/;
+console.log(regex.test("hello world")); // true
+```
+
+### Matching Strings
+```
+let str = "The rain in Spain";
+let result = str.match(/ain/g);
+console.log(result); // ["ain", "ain"]
+```
+
+### Replacing Text
+```
+let text = "I love JavaScript!";
+console.log(text.replace(/JavaScript/, "Regex")); // "I love Regex!"
+```
+
+### Extracting Matches
+```
+let email = "user@example.com";
+let match = email.match(/\w+@\w+\.\w+/);
+console.log(match[0]); // "user@example.com"
+```
+
+## Flags in Regular Expressions
+- `g` – Global search (match all occurrences)
+- `i` – Case-insensitive search
+- `m` – Multi-line search
+```
+let str = "Hello hello HELLO";
+console.log(str.match(/hello/gi)); // ["Hello", "hello", "HELLO"]
+```
+
+
 
