@@ -616,5 +616,53 @@ let str = "Hello hello HELLO";
 console.log(str.match(/hello/gi)); // ["Hello", "hello", "HELLO"]
 ```
 
+#  Indexed Collections
+Indexed collections in JavaScript include **arrays** and **typed arrays**, which store multiple values in an ordered list.
+
+## Arrays
+Arrays store multiple values and can hold different data types.
+```
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[0]); // Apple
+```
+
+### Common Array Method
+- `push()` – Adds an element to the end
+- `pop()` – Removes the last element
+- `shift()` – Removes the first element
+- `unshift()` – Adds an element to the beginning
+- `slice()` – Returns a portion of an array
+- `splice()` – Adds/removes elements in an array
+- `indexOf()` – Finds the index of an element
+- `includes()` – Checks if an element exists
+
+```
+let numbers = [10, 20, 30, 40];
+numbers.push(50); // [10, 20, 30, 40, 50]
+numbers.pop(); // [10, 20, 30, 40]
+```
+
+### Looping Through Arrays
+```
+let colors = ["Red", "Green", "Blue"];
+colors.forEach(color => console.log(color));
+```
+
+### Mapping & Filtering
+```
+let nums = [1, 2, 3, 4];
+let squared = nums.map(n => n * n); // [1, 4, 9, 16]
+let evens = nums.filter(n => n % 2 === 0); // [2, 4]
+```
+
+## Typed Arrays
+Typed arrays store binary data efficiently, useful for handling large numerical datasets.
+```javascript
+let intArray = new Int16Array([10, 20, 30]);
+console.log(intArray[1]); // 20
+```
+
+
+
 
 
