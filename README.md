@@ -662,6 +662,54 @@ let intArray = new Int16Array([10, 20, 30]);
 console.log(intArray[1]); // 20
 ```
 
+#  Keyed Collections
+
+Keyed collections in JavaScript include **Map** and **Set**, which store data using unique keys or values.
+
+## Map
+A `Map` is a collection of key-value pairs where keys can be any data type.
+```javascript
+let map = new Map();
+map.set("name", "Alice");
+map.set(1, "one");
+console.log(map.get("name")); // Alice
+console.log(map.has(1)); // true
+```
+
+### Common Map Methods
+- `set(key, value)` – Adds a key-value pair
+- `get(key)` – Retrieves a value
+- `has(key)` – Checks if a key exists
+- `delete(key)` – Removes a key-value pair
+- `size` – Returns the number of entries
+- `clear()` – Removes all entries
+
+```
+map.delete("name");
+console.log(map.size); // 1
+```
+
+## JavaScript Set
+A `Set` stores unique values, preventing duplicates.
+```
+let set = new Set([1, 2, 3, 3, 4]);
+console.log(set); // Set {1, 2, 3, 4}
+```
+
+### Common Set Methods
+- `add(value)` – Adds a value
+- `has(value)` – Checks if a value exists
+- `delete(value)` – Removes a value
+- `size` – Returns the number of elements
+- `clear()` – Removes all elements
+
+```
+set.add(5);
+set.delete(2);
+console.log(set.has(3)); // true
+```
+
+
 
 
 
