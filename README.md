@@ -710,6 +710,87 @@ console.log(set.has(3)); // true
 ```
 
 
+# Objects
+
+Objects are collections of key-value pairs that store data and methods.
+```
+let person = {
+  name: "Alice",
+  age: 25,
+  greet: function() {
+    console.log("Hello!");
+  }
+};
+console.log(person.name); // Alice
+```
+
+
+### Object Literals
+```
+let car = { brand: "Toyota", model: "Corolla" };
+```
+
+### Using `new Object()`
+```
+let obj = new Object();
+obj.key = "value";
+```
+
+### Using Constructors
+```
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+let user = new Person("Bob", 30);
+console.log(user.name); // Bob
+```
+
+## Accessing and Modifying Properties
+```
+console.log(person["name"]); // Alice
+person.age = 26;
+delete person.greet;
+```
+
+## Object Methods
+- `Object.keys(obj)` – Returns an array of keys
+- `Object.values(obj)` – Returns an array of values
+- `Object.entries(obj)` – Returns key-value pairs
+
+```
+console.log(Object.keys(person)); // ["name", "age"]
+```
+
+## Prototypes and Inheritance
+Objects inherit properties from their prototype.
+```
+function Animal(name) {
+  this.name = name;
+}
+Animal.prototype.speak = function() {
+  console.log(this.name + " makes a sound");
+};
+let dog = new Animal("Dog");
+dog.speak(); // Dog makes a sound
+```
+
+## `this` in Objects
+The `this` keyword refers to the object it belongs to.
+```
+let user = {
+  name: "Alice",
+  greet() {
+    console.log("Hello, " + this.name);
+  }
+};
+user.greet(); // Hello, Alice
+```
+
+
+
+
+
 
 
 
