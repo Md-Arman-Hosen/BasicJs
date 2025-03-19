@@ -786,6 +786,118 @@ let user = {
 };
 user.greet(); // Hello, Alice
 ```
+#  JavaScript Classes
+
+Classes in JavaScript are a blueprint for creating objects with shared properties and methods.
+Classes provide a structured way to create objects with reusable code. Features like inheritance, static methods, and private fields enhance JavaScript's object-oriented capabilities.
+
+
+```
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+let user = new Person("Alice", 25);
+user.greet(); // Hello, my name is Alice
+```
+### Class Declaration
+
+```
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+}
+```
+
+### Class Expression
+
+```
+const Animal = class {
+  constructor(type) {
+    this.type = type;
+  }
+};
+```
+
+## Class Methods
+
+- Instance methods are defined inside the class.
+- Static methods belong to the class itself and not to instances.
+
+```
+class MathHelper {
+  static add(a, b) {
+    return a + b;
+  }
+}
+console.log(MathHelper.add(5, 3)); // 8
+```
+
+## Inheritance with 
+
+Classes can inherit from other classes using `extends`.
+
+```javascript
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a sound`);
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks`);
+  }
+}
+let dog = new Dog("Buddy");
+dog.speak(); // Buddy barks
+```
+
+## Call Parent Methods
+
+The `super` keyword allows calling the parent class constructor and methods.
+
+```
+class Parent {
+  constructor() {
+    console.log("Parent constructor");
+  }
+}
+class Child extends Parent {
+  constructor() {
+    super();
+    console.log("Child constructor");
+  }
+}
+let obj = new Child();
+// Parent constructor
+// Child constructor
+```
+
+## Private and Public Fields
+
+- `#privateField` is only accessible inside the class.
+
+```javascript
+class BankAccount {
+  #balance = 1000; // Private field
+  getBalance() {
+    return this.#balance;
+  }
+}
+let account = new BankAccount();
+console.log(account.getBalance()); // 1000
+```
+
+
 
 
 
