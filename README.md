@@ -897,6 +897,91 @@ let account = new BankAccount();
 console.log(account.getBalance()); // 1000
 ```
 
+#  Promises
+A Promise in JavaScript represents a value that may be available now, later, or never. It helps manage asynchronous operations efficiently.
+Promises simplify asynchronous programming in JavaScript, making it easier to handle operations like API calls, file reading, and database queries without callback hell.
+
+## Creating a Promise
+A Promise is an object representing an eventual completion (or failure) of an asynchronous operation. It takes a function as an argument with two parameters: `resolve` and `reject`.
+
+```
+let myPromise = new Promise((resolve, reject) => {
+  let success = true;
+  setTimeout(() => {  // Simulating an asynchronous operation
+    if (success) {
+      resolve("Operation successful");
+    } else {
+      reject("Operation failed");
+    }
+  }, 2000);
+});
+```
+- `resolve(value)`: Marks the promise as fulfilled and returns a value.
+- `reject(error)`: Marks the promise as rejected and returns an error.
+- The promise remains in the `pending` state until it is either resolved or rejected.
+
+## Promise States
+- **Pending** – Initial state, not resolved or rejected.
+- **Fulfilled** – The operation completed successfully.
+- **Rejected** – The operation failed.
+
+## Handling Promises
+### `.then()` and `.catch()`
+```
+myPromise
+  .then(result => console.log(result)) // Operation successful
+  .catch(error => console.error(error));
+```
+
+###  `async/await` 
+```javascript
+async function fetchData() {
+  try {
+    let result = await myPromise;
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+fetchData();
+```
+
+## Chaining Promises
+Promise chaining helps execute multiple asynchronous operations in sequence, where the output of one operation is passed as input to the next.
+
+```
+myPromise
+  .then(result => {
+    console.log(result); // Logs "Operation successful"
+    return new Promise((resolve) => {
+      setTimeout(() => resolve("Next step"), 1000);
+    });
+  })
+  .then(step => {
+    console.log(step); // Logs "Next step"
+    return "Final step";
+  })
+  .then(final => console.log(final)) // Logs "Final step"
+  .catch(error => console.error(error));
+```
+### Benefits of Chaining:
+- Avoids callback hell
+- Improves readability
+- Ensures sequential execution
+
+## Promise Methods
+- `Promise.all([p1, p2])` – Resolves when all promises resolve.
+- `Promise.race([p1, p2])` – Resolves when the first promise resolves.
+- `Promise.allSettled([p1, p2])` – Waits for all promises to settle.
+- `Promise.any([p1, p2])` – Resolves when any one promise resolves.
+
+```
+let p1 = Promise.resolve("First");
+let p2 = new Promise((resolve) => setTimeout(() => resolve("Second"), 1000));
+Promise.all([p1, p2]).then(console.log); // ["First", "Second"]
+```
+
+
 
 
 
