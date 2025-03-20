@@ -981,6 +981,91 @@ let p2 = new Promise((resolve) => setTimeout(() => resolve("Second"), 1000));
 Promise.all([p1, p2]).then(console.log); // ["First", "Second"]
 ```
 
+#  Typed Arrays
+Typed Arrays in JavaScript allow handling binary data efficiently. They provide a way to work with raw memory buffers using various numeric types.
+it provide high-performance binary data handling in JavaScript, making them useful for graphics, audio processing, and working with Web APIs.
+
+## Creating a Typed Array
+Typed arrays are built on `ArrayBuffer`, which represents a fixed-length binary buffer.
+```
+let buffer = new ArrayBuffer(16); // Creates a buffer of 16 bytes
+```
+
+###  `ArrayBuffer`
+Views interpret the raw memory as specific data types.
+```
+let int32View = new Int32Array(buffer);
+console.log(int32View.length); // 4 (each Int32 takes 4 bytes)
+```
+
+## Common Typed Array Types
+| Typed Array | Size per Element |
+|------------|----------------|
+| `Int8Array` | 1 byte |
+| `Uint8Array` | 1 byte |
+| `Int16Array` | 2 bytes |
+| `Uint16Array` | 2 bytes |
+| `Int32Array` | 4 bytes |
+| `Uint32Array` | 4 bytes |
+| `Float32Array` | 4 bytes |
+| `Float64Array` | 8 bytes |
+
+## Reading and Writing Data
+Typed arrays function similarly to regular arrays but operate on fixed-size binary data. You can read and modify data using index-based access.
+
+### Reading Data
+```
+let uint8 = new Uint8Array([10, 20, 30]);
+console.log(uint8[1]); // 20
+```
+- Accessing elements works like a normal array.
+- Values are stored in binary but interpreted according to the array type.
+
+### Writing Data
+```
+uint8[1] = 50;
+console.log(uint8); // [10, 50, 30]
+```
+- Values are overwritten in place without changing array length.
+- Typed arrays ensure efficient memory allocation, making them ideal for performance-sensitive applications.
+
+### Iterating Through a Typed Array
+```
+let int16 = new Int16Array([100, 200, 300]);
+for (let value of int16) {
+  console.log(value);
+}
+```
+- can use loops like `for...of` to iterate through elements.
+- Supports methods like `.map()`, `.forEach()`, and `.reduce()` similar to regular arrays.
+
+### Copying Data Between Typed Arrays
+```
+let source = new Uint8Array([1, 2, 3]);
+let destination = new Uint8Array(3);
+destination.set(source);
+console.log(destination); // [1, 2, 3]
+```
+- `set()` allows copying values between different typed arrays.
+- It automatically converts values based on the target array type.
+
+##  DataViews for More Control
+`DataView` allows setting/getting values with byte offsets and specific endianness.
+```
+let dataView = new DataView(buffer);
+dataView.setInt16(0, 256, true); // Little-endian storage
+console.log(dataView.getInt16(0, true)); // 256
+```
+
+## Working with Buffers and Views
+Typed arrays do not resize dynamically; they are fixed in length.
+```
+let floatArray = new Float32Array(4);
+floatArray[0] = 3.14;
+console.log(floatArray.buffer.byteLength); // 16 (4 elements * 4 bytes)
+```
+
+
 
 
 
