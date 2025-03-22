@@ -1144,6 +1144,62 @@ function* idGenerator() {
 const genId = idGenerator();
 console.log(genId.next().value); // 1
 ```
+#  Internationalization
+
+## Internationalization (i18n)
+Internationalization (i18n) in JavaScript refers to adapting applications to different languages, regions, and cultural conventions using built-in APIs.
+The `Intl` API simplifies internationalization in JavaScript, allowing seamless formatting of numbers, dates, times, and strings based on user locale settings.
+
+##  `Intl` Object
+JavaScript provides the `Intl` object to support internationalization, including number formatting, date formatting, and string comparisons.
+
+##  Numbers with `Intl.NumberFormat`**
+`Intl.NumberFormat` allows formatting numbers based on locale.
+``` 
+const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' });
+console.log(formatter.format(123456.78)); // "123.456,78 €"
+```
+
+### Options for `NumberFormat`
+- `style`: `"decimal"`, `"currency"`, `"percent"`
+- `currency`: Specifies the currency format
+- `minimumFractionDigits`, `maximumFractionDigits`
+
+## Formatting Dates and Times with `Intl.DateTimeFormat`
+`Intl.DateTimeFormat` provides locale-aware date and time formatting.
+``` 
+const dateFormatter = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' });
+console.log(dateFormatter.format(new Date())); // "Tuesday, 18 March 2025"
+```
+
+### `DateTimeFormat`
+- `dateStyle`: `"short"`, `"medium"`, `"long"`, `"full"`
+- `timeStyle`: `"short"`, `"medium"`, `"long"`, `"full"`
+- `timeZone`: `"UTC"`, `"America/New_York"`, etc.
+
+## Collation and String Comparison with `Intl.Collator`**
+Used for locale-sensitive string comparison.
+```
+const collator = new Intl.Collator('fr', { sensitivity: 'base' });
+console.log(collator.compare('école', 'ecole')); // 0 (equal in French collation rules)
+```
+
+## Pluralization with `Intl.PluralRules`**
+Determines the correct plural category based on locale.
+```
+const pluralRules = new Intl.PluralRules('en-US');
+console.log(pluralRules.select(1)); // "one"
+console.log(pluralRules.select(2)); // "other"
+```
+
+## List Formatting with `Intl.ListFormat`
+Formats lists in a locale-aware way.
+```
+const listFormatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+console.log(listFormatter.format(['Apple', 'Banana', 'Cherry']));
+// "Apple, Banana, and Cherry"
+```
+
 
 
 
