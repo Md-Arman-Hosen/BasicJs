@@ -1066,6 +1066,84 @@ console.log(floatArray.buffer.byteLength); // 16 (4 elements * 4 bytes)
 ```
 
 
+#  Iterators and Generators
+An iterator in JavaScript is an object that allows sequential access to elements of a collection. It follows the iterator protocol, which defines a `next()` method returning an object with `{ value, done }` properties.
+Iterators and generators provide a powerful way to handle sequential data and asynchronous operations in JavaScript, making code more efficient and readable.
+
+
+## Creating an Iterator
+An iterator can be created manually using an object with a `next()` method.
+```
+function createIterator(arr) {
+  let index = 0;
+  return {
+    next: function() {
+      return index < arr.length
+        ? { value: arr[index++], done: false }
+        : { done: true };
+    }
+  };
+}
+const myIterator = createIterator([10, 20, 30]);
+console.log(myIterator.next()); // { value: 10, done: false }
+```
+
+## Built-in Iterables
+JavaScript provides built-in iterables such as:
+- Arrays
+- Strings
+- Maps and Sets
+- The `arguments` object
+
+ can iterate through them using a `for...of` loop:
+```
+const array = [1, 2, 3];
+for (let num of array) {
+  console.log(num);
+}
+```
+
+##  Generators
+A generator function allows pausing and resuming execution using the `yield` keyword. It returns an iterator.
+```
+function* myGenerator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const gen = myGenerator();
+console.log(gen.next()); // { value: 1, done: false }
+```
+
+## Generator Function Syntax
+- Defined using `function*` syntax.
+- Uses `yield` to return values one at a time.
+- Maintains state between function calls.
+- Can be paused and resumed.
+
+## Passing Arguments to Generators
+```
+function* greet(name) {
+  yield `Hello, ${name}!`;
+  yield "How are you?";
+}
+const g = greet("Alice");
+console.log(g.next().value); // "Hello, Alice!"
+```
+
+## Generators for Infinite Sequences
+Generators can create infinite sequences efficiently.
+```
+function* idGenerator() {
+  let id = 1;
+  while (true) {
+    yield id++;
+  }
+}
+
+const genId = idGenerator();
+console.log(genId.next().value); // 1
+```
 
 
 
