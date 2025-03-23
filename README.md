@@ -1261,6 +1261,63 @@ person.name = "David"; // Error in strict mode
 ```
 
 
+#  Modules
+Modules in JavaScript allow splitting code into reusable, maintainable files. They enable encapsulation and better dependency management.
+it provide a clean, efficient way to structure applications, enabling better scalability and maintainability.
+
+##  Exporting and Importing Modules 
+Modules use `export` and `import` statements to share functionality across files.
+
+### Exporting
+``` 
+// math.js
+export function add(a, b) {
+  return a + b;
+}
+export const PI = 3.1416;
+```
+
+### Importing
+``` 
+// main.js
+import { add, PI } from './math.js';
+console.log(add(2, 3)); // 5
+console.log(PI); // 3.1416
+```
+
+##  Default Exports
+A module can have a single default export.
+``` 
+// logger.js
+export default function log(message) {
+  console.log(message);
+}
+```
+
+``` 
+// main.js
+import log from './logger.js';
+log("Hello, Modules!");
+```
+
+## Dynamic Imports
+JavaScript supports on-demand loading of modules using `import()`.
+```javascript
+import('./math.js').then(module => {
+  console.log(module.add(5, 10)); // 15
+});
+```
+
+##  Module Scope & Strict Mode
+- Modules are in **strict mode** by default (`'use strict'`).
+- Variables declared inside a module are **scoped** to that module.
+
+##  Benefits of Using Modules
+- Code reusability and maintainability.
+- Avoids global namespace pollution.
+- Supports asynchronous loading and optimization in modern frameworks.
+
+
 
 
 
