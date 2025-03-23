@@ -1201,6 +1201,65 @@ console.log(listFormatter.format(['Apple', 'Banana', 'Cherry']));
 ```
 
 
+#  Meta-Programming
+
+## What Is Meta-Programming?
+Meta-programming is writing code that manipulates other code dynamically. JavaScript supports meta-programming using features like `Proxy`, `Reflect`, and `eval`.
+
+##  `Proxy` for Object Interception 
+The `Proxy` object allows intercepting and customizing operations on objects.
+``` 
+const handler = {
+  get: (target, prop) => {
+    return prop in target ? target[prop] : `Property '${prop}' not found`;
+  }
+};
+
+const obj = new Proxy({ name: "Alice" }, handler);
+console.log(obj.name); // "Alice"
+console.log(obj.age);  // "Property 'age' not found"
+```
+
+### Common Proxy Traps:
+- `get(target, prop)`: Intercepts property access.
+- `set(target, prop, value)`: Intercepts property assignment.
+- `has(target, prop)`: Intercepts the `in` operator.
+- `deleteProperty(target, prop)`: Intercepts property deletion.
+
+## `Reflect` for Object Operations 
+The `Reflect` API provides methods to perform object operations in a controlled way.
+```javascript
+const obj = { name: "Bob" };
+Reflect.set(obj, "age", 30);
+console.log(Reflect.get(obj, "age")); // 30
+```
+
+### Common `Reflect` Methods:
+- `Reflect.get(target, prop)`: Retrieves property value.
+- `Reflect.set(target, prop, value)`: Sets property value.
+- `Reflect.has(target, prop)`: Checks if a property exists.
+- `Reflect.deleteProperty(target, prop)`: Deletes a property.
+
+## Dynamic Code Execution with `eval` (Use with Caution!)     
+The `eval` function allows executing strings as JavaScript code.
+ `eval` can introduce security vulnerabilities and performance issues, so it should be avoided when possible.
+
+``` 
+eval("console.log('Hello from eval')");
+```
+
+## Modifying Object Behavior with `Object.defineProperty`
+This method allows defining custom property behavior.
+``` 
+const person = {};
+Object.defineProperty(person, "name", {
+  value: "Charlie",
+  writable: false
+});
+console.log(person.name); // "Charlie"
+person.name = "David"; // Error in strict mode
+```
+
 
 
 
