@@ -1390,6 +1390,60 @@ const obj = {
 obj.greet(); // "Eve"
 ```
 
+#   JavaScript Object Prototypes
+
+In JavaScript, every object has an internal link to another object called its prototype. Prototypes enable inheritance and shared properties.
+Object prototypes provide a powerful way to implement inheritance and code reuse in JavaScript, forming the foundation of the language’s object model.
+
+## Prototype Chain
+When accessing a property, JavaScript first looks in the object itself. If not found, it searches in the prototype chain.
+```
+const obj = {};
+console.log(obj.toString()); // Inherited from Object.prototype
+```
+
+## Creating and Using Prototypes
+Objects can be linked to a prototype using `Object.create()`.
+```
+const personPrototype = {
+  greet() {
+    console.log("Hello!");
+  }
+};
+const alice = Object.create(personPrototype);
+alice.greet(); // "Hello!"
+```
+
+## Prototype Inheritance with Constructor Functions
+```
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  console.log(`Hi, I'm ${this.name}`);
+};
+const bob = new Person("Bob");
+bob.greet(); // "Hi, I'm Bob"
+```
+
+## Modifying Built-in Prototypes (Use with Caution!)
+You can add methods to built-in objects, but it's not recommended as it may cause conflicts.
+```
+Array.prototype.last = function() {
+  return this[this.length - 1];
+};
+console.log([1, 2, 3].last()); // 3
+```
+
+## Checking Prototype Relationships
+- `Object.getPrototypeOf(obj)`: Gets the prototype of an object.
+- `instanceof`: Checks if an object is an instance of a constructor.
+```javascript
+console.log(Object.getPrototypeOf(bob) === Person.prototype); // true
+console.log(bob instanceof Person); // true
+```
+
+
 
 
 
