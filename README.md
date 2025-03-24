@@ -1318,6 +1318,79 @@ import('./math.js').then(module => {
 - Supports asynchronous loading and optimization in modern frameworks.
 
 
+#Advanced JavaScript Objects
+
+## Prototypes and Inheritance
+JavaScript uses prototypal inheritance, where objects inherit properties and methods from a prototype.
+Advanced object concepts like prototypes, getters/setters, and `Object.defineProperty()` enhance JavaScript’s flexibility and power for building scalable applications.
+
+```
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function() {
+  console.log(`Hello, my name is ${this.name}`);
+};
+const alice = new Person("Alice");
+alice.greet(); // "Hello, my name is Alice"
+```
+
+## Object.create() for Prototype-based Inheritance
+Allows creating an object with a specific prototype.
+``` 
+const personProto = {
+  greet() {
+    console.log("Hello!");
+  }
+};
+const bob = Object.create(personProto);
+bob.greet(); // "Hello!"
+```
+
+## Getters and Setters
+Define custom behavior for property access.
+```javascript
+const user = {
+  _name: "Charlie",
+  get name() {
+    return this._name.toUpperCase();
+  },
+  set name(newName) {
+    this._name = newName;
+  }
+};
+console.log(user.name); // "CHARLIE"
+user.name = "David";
+console.log(user.name); // "DAVID"
+```
+
+## `Object.defineProperty()`
+Allows defining custom properties with specific behaviors.
+```
+const book = {};
+Object.defineProperty(book, "title", {
+  value: "JavaScript Guide",
+  writable: false, // Read-only
+  enumerable: true
+});
+console.log(book.title); // "JavaScript Guide"
+book.title = "New Title"; // Error in strict mode
+```
+
+## `this` Keyword in Objects
+- Refers to the object calling the method.
+- Behavior depends on how a function is invoked.
+```
+const obj = {
+  name: "Eve",
+  greet() {
+    console.log(this.name);
+  }
+};
+obj.greet(); // "Eve"
+```
+
+
 
 
 
