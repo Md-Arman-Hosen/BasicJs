@@ -1445,6 +1445,107 @@ console.log(bob instanceof Person); // true
 
 
 
+# Object-Oriented Programming in JavaScript
+OOP is a programming paradigm based on objects that contain both data (properties) and behavior (methods). JavaScript supports OOP through prototypal and class-based inheritance.
+OOP in JavaScript enables modular, reusable, and maintainable code using concepts like classes, encapsulation, inheritance, and polymorphism.
+
+
+
+## Creating Objects Using Classes
+JavaScript introduced the `class` syntax to simplify object creation.
+```
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(`Hi, I'm ${this.name}`);
+  }
+}
+const alice = new Person("Alice", 25);
+alice.greet(); // "Hi, I'm Alice"
+```
+
+## Encapsulation: Protecting Object Data
+Encapsulation restricts direct access to object properties.
+```
+class User {
+  #password;
+  constructor(username, password) {
+    this.username = username;
+    this.#password = password;
+  }
+  checkPassword(input) {
+    return input === this.#password;
+  }
+}
+const user = new User("JohnDoe", "secret");
+console.log(user.checkPassword("secret")); // true
+```
+
+## Inheritance: Reusing Code
+Inheritance allows one class to derive from another.
+```
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+const dog = new Dog("Buddy");
+dog.speak(); // "Buddy barks."
+```
+
+## Polymorphism: Method Overriding
+Polymorphism allows a subclass to provide a specific implementation of a method inherited from a parent class.
+```javascript
+class Shape {
+  area() {
+    return 0;
+  }
+}
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.radius = radius;
+  }
+  area() {
+    return Math.PI * this.radius ** 2;
+  }
+}
+const circle = new Circle(5);
+console.log(circle.area()); // 78.54
+```
+
+## Composition vs. Inheritance
+- Inheritance: When objects share behavior through class hierarchies.
+- Composition: When objects get functionality by combining smaller, reusable components.
+```
+class Engine {
+  start() {
+    console.log("Engine started");
+  }
+}
+class Car {
+  constructor() {
+    this.engine = new Engine();
+  }
+  drive() {
+    this.engine.start();
+    console.log("Car is moving");
+  }
+}
+const car = new Car();
+car.drive();
+```
 
 
 
