@@ -1548,6 +1548,28 @@ car.drive();
 ```
 
 
+#  Classes in JavaScript
+
+## What Are Classes in JavaScript?
+JavaScript classes provide a structured way to create objects using a blueprint. They simplify object creation and organization by grouping properties and behaviors into reusable templates. The `class` keyword introduces a more readable syntax compared to prototype-based inheritance.
+
+## Class Features and Structure
+A class typically includes a constructor method, which initializes object properties when a new instance is created. Methods can be added to define behavior. Classes support inheritance, allowing one class to derive properties and methods from another.
+
+## Encapsulation and Private Fields
+Encapsulation restricts direct access to certain properties, ensuring data integrity. Private fields, introduced with `#`, prevent external modification and enforce controlled interactions with object data.
+
+## Inheritance and Code Reusability
+Using `extends`, a class can inherit methods and properties from another class. This promotes reusability and hierarchical structuring of code, reducing redundancy and improving maintainability.
+
+## Static Methods and Utility Functions
+Static methods belong to the class itself rather than instances. They are useful for utility functions that do not require individual object state, such as mathematical calculations or helper functions.
+
+## Getters and Setters for Controlled Access
+Getters and setters provide a controlled way to access and modify object properties. They help in implementing validation, computed properties, and encapsulation without exposing internal data directly.
+
+
+
 
 
 
