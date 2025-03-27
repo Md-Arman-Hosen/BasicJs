@@ -1569,6 +1569,30 @@ Static methods belong to the class itself rather than instances. They are useful
 Getters and setters provide a controlled way to access and modify object properties. They help in implementing validation, computed properties, and encapsulation without exposing internal data directly.
 
 
+# Object Building Practice in JavaScript
+
+# Understanding Object Composition : 
+Instead of relying solely on class-based inheritance, JavaScript encourages object composition, where objects are built by combining smaller, reusable parts. This approach improves modularity and flexibility in coding.
+Object building in JavaScript is about balancing flexibility and maintainability. Using factory functions, prototypes, and mixins helps create efficient, scalable, and reusable objects while avoiding the pitfalls of deep inheritance chains.
+
+# Factory Functions for Object Creation
+Factory functions return objects with shared behavior without using classes. This is useful for creating multiple instances with similar properties and methods.
+
+# Prototypes for Efficiency
+Using Object.create() or setting up prototypes ensures that shared methods are not duplicated across instances, optimizing memory usage.
+
+# Encapsulation for Data Protection
+Encapsulation hides internal details of an object by using closures or private class fields (# syntax). This prevents accidental modifications and maintains data integrity.
+
+# Mixins for Code Reusability
+Mixins allow objects to share functionality without inheritance. Methods are copied into objects or prototypes, enabling flexible and reusable code structures.
+
+# Best Practices in Object Design
+Keep objects small and focused on a single responsibility.
+Use composition over inheritance for greater modularity.
+Apply encapsulation to protect object state.
+Use prototypes to improve performance when sharing methods.
+
 
 
 
