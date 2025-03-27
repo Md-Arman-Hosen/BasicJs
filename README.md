@@ -13,7 +13,7 @@ Unlike HTML and CSS, JavaScript enables dynamic content updates, user interactio
  It is supported by all modern web browsers without requiring additional plugins.  
 
 
-Page-2 : Basics of JavaScrip
+Page-2 : Basics of JavaScript
 ---------------------------------------------------------
    JavaScript code is embedded inside  HTML or written in separate js files. 
 
