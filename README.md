@@ -1643,6 +1643,33 @@ Adding methods to a prototype allows all instances to share behavior without dup
 
 
 
+**Memory Management in JavaScript**
+Efficient memory management is critical for performance, particularly in large or long-running JavaScript applications. Understanding how memory allocation and garbage collection work, alongside strategies to avoid memory leaks, leads to better and more efficient code.
+
+### Automatic Garbage Collection
+JavaScript uses automatic garbage collection, meaning developers don’t need to manually free up memory. The JavaScript engine automatically reclaims memory that is no longer accessible.
+
+### Memory Leaks
+Memory leaks happen when memory is not released even though it's no longer needed. This can occur from:
+- Unremoved event listeners.
+- Global variables not cleared after use.
+- Data structures that remain in memory unnecessarily.
+
+### Reference Types and the Heap
+Reference types (objects, arrays, functions) are stored in the heap. They are accessed through references. When assigned to another variable, both variables refer to the same object, meaning changes to one affect the other.
+
+### Primitives and the Stack
+Primitive types (numbers, strings, booleans) are stored in the stack. These are passed by value, meaning modifications in one variable do not affect others.
+
+### Weak References
+`WeakMap` and `WeakSet` allow weak references to objects. Objects referred to in weak references can be garbage-collected even if they are still referenced in the weak collection, thus avoiding memory leaks.
+
+### Manual Memory Management
+Though JavaScript handles most memory management automatically, developers can improve memory usage by:
+- Removing event listeners when no longer needed.
+- Nullifying references to objects when they are no longer required.
+
+
 
 
 
