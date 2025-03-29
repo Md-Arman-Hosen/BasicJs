@@ -1692,7 +1692,45 @@ Functions like `parseInt()`, `parseFloat()`, `isNaN()`, and `encodeURIComponent(
 Overusing global objects can cause conflicts and unpredictable behavior. Using local variables and modules (`import/export`) helps maintain cleaner code.
 
 
+###  `AggregateError` 
+`AggregateError` is a powerful tool for managing multiple errors efficiently in JavaScript. It improves debugging and error handling in scenarios where multiple operations can fail at once.  
 
+
+####  What is `AggregateError`?  
+`AggregateError` is a special error type that represents multiple errors grouped together. It is mainly used when handling multiple rejected promises in `Promise.any()` or `Promise.allSettled()`.  
+
+####  Creating an `AggregateError`  
+You can create an `AggregateError` instance by passing an array of errors and an optional message:  
+``` 
+const error1 = new Error("First error");
+const error2 = new Error("Second error");
+const aggregateError = new AggregateError([error1, error2], "Multiple errors occurred");
+
+console.log(aggregateError.message); // "Multiple errors occurred"
+console.log(aggregateError.errors);  // [Error: First error, Error: Second error]
+```
+
+####   How `AggregateError` Works in Promises 
+When using `Promise.any()`, if all promises reject, an `AggregateError` is thrown:  
+``` 
+Promise.any([
+  Promise.reject(new Error("Error 1")),
+  Promise.reject(new Error("Error 2"))
+]).catch(err => console.log(err.errors));  
+// Logs an array of errors: [Error: Error 1, Error: Error 2]
+```
+
+#### Accessing Errors 
+The `.errors` property contains an array of the errors that caused the `AggregateError`. This makes it useful for debugging multiple failures at once.
+
+####  Why Use `AggregateError`? 
+- Helps handle multiple errors in promise-based operations.  
+- Provides better error reporting when multiple operations fail.  
+- Useful in `Promise.any()` and `Promise.allSettled()` for managing failed promises.  
+
+ 
+
+ 
 
 
 
