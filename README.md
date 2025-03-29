@@ -1670,6 +1670,29 @@ Though JavaScript handles most memory management automatically, developers can i
 - Nullifying references to objects when they are no longer required.
 
 
+# Global Objects
+JavaScript’s global objects offer essential utilities, but responsible usage is key to writing maintainable and efficient code.
+### What Are Global Objects?
+Global objects are built-in objects available throughout JavaScript without requiring imports. They provide utility functions, constructors, and data structures.
+
+###  Common Global Objects
+- **Primitive Wrappers**: `String`, `Number`, `Boolean` (wrap primitives in object form).
+- **Math & Date**: `Math` (for mathematical operations), `Date` (for handling dates and times).
+- **Data Structures**: `Array`, `Set`, `Map`, `WeakSet`, `WeakMap`.
+- **Error Handling**: `Error`, `TypeError`, `RangeError` for debugging.
+- **JSON**: `JSON` for parsing and stringifying JSON data.
+
+### Global Functions
+Functions like `parseInt()`, `parseFloat()`, `isNaN()`, and `encodeURIComponent()` are globally accessible for common operations.
+
+### The `globalThis` Object
+`globalThis` provides a universal way to access the global scope across different environments (`window` in browsers, `global` in Node.js).
+
+### Avoiding Global Pollution
+Overusing global objects can cause conflicts and unpredictable behavior. Using local variables and modules (`import/export`) helps maintain cleaner code.
+
+
+
 
 
 
