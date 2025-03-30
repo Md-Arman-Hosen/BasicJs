@@ -1729,6 +1729,64 @@ The `.errors` property contains an array of the errors that caused the `Aggregat
 - Useful in `Promise.any()` and `Promise.allSettled()` for managing failed promises.  
 
  
+###   `Array` Global Object
+JavaScript arrays are powerful, flexible, and essential for handling lists of data. Understanding their methods and behaviors helps in writing efficient and readable code.  
+#### What is an Array?
+An `Array` in JavaScript is a high-level, list-like object used to store multiple values in a single variable. Arrays can hold elements of any data type, including numbers, strings, objects, and even other arrays.  
+
+#### Creating an Array
+Arrays can be created in multiple ways:  
+```
+const arr1 = [1, 2, 3]; // Literal syntax  
+const arr2 = new Array(5); // Creates an empty array with length 5  
+const arr3 = Array.of(4, 5, 6); // Creates an array with specified elements  
+```
+
+#### Accessing and Modifying Elements
+- Use **indexing** to access elements (`array[index]`).  
+- JavaScript arrays are **zero-indexed**, meaning the first element is at index `0`.  
+- The `.length` property returns the number of elements.  
+```
+const numbers = [10, 20, 30];
+console.log(numbers[0]); // 10
+numbers[1] = 25; // Modify an element
+console.log(numbers.length); // 3
+```
+
+#### Common Array Methods  
+- **Adding elements**  
+  - `.push(value)`: Adds to the end.  
+  - `.unshift(value)`: Adds to the beginning.  
+- **Removing elements**  
+  - `.pop()`: Removes from the end.  
+  - `.shift()`: Removes from the beginning.  
+- **Slicing and Splicing**  
+  - `.slice(start, end)`: Returns a new subarray without modifying the original.  
+  - `.splice(start, count, ...items)`: Adds/removes elements at a specific index.  
+- **Finding Elements**  
+  - `.indexOf(value)`: Returns the index of a value or `-1` if not found.  
+  - `.includes(value)`: Checks if a value exists.  
+  - `.find(callback)`: Returns the first matching element.  
+- **Looping Over Arrays**  
+  - `.forEach(callback)`: Executes a function for each element.  
+  - `.map(callback)`: Returns a new array with transformed elements.  
+  - `.filter(callback)`: Returns a new array with elements that pass a test.  
+  - `.reduce(callback, initialValue)`: Accumulates values into a single result.  
+
+####  Sorting and Reversing 
+- `.sort()` sorts elements as **strings** by default. Use a compare function for numeric sorting.  
+  ```
+  [3, 1, 10].sort((a, b) => a - b); // [1, 3, 10]
+  ```
+- `.reverse()` reverses the order of elements.  
+
+####  Converting Arrays  
+- `.join(separator)`: Converts an array to a string.  
+- `Array.from(iterable)`: Converts an iterable (like a string) to an array.  
+- `Array.isArray(value)`: Checks if a value is an array.  
+
+
+
 
  
 
